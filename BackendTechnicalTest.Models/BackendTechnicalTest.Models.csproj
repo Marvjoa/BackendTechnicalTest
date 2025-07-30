@@ -7,9 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Accounts\" />
-      <Folder Include="Clients\" />
-      <Folder Include="Transactions\" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="9.0.7" />
     </ItemGroup>
 
 </Project>
