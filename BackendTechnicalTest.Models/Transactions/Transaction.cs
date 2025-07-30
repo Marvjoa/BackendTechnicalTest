@@ -17,7 +17,7 @@ public class Transaction : Keyed
     public TransactionType Type { get; set; }
     
     [Required]
-    [Precision(16, 4)]
+    [Precision(19, 4)]
     public decimal Balance { get; set; }
 
     public string Description { get; set; } = null!;

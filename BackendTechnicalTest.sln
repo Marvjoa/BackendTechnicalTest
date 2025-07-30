@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendTechnicalTest", "Bac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendTechnicalTest.Models", "BackendTechnicalTest.Models\BackendTechnicalTest.Models.csproj", "{D0AEAB5A-4EF1-4764-9850-2E99576C83A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendTechnicalTest.API", "BackendTechnicalTest.API\BackendTechnicalTest.API.csproj", "{BDE92FDD-88BF-43DE-A716-7225A31B6F99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendTechnicalTest.Infrastructure", "BackendTechnicalTest.Infrastructure\BackendTechnicalTest.Infrastructure.csproj", "{2C192260-DF62-4FC5-BC1F-E550709DA204}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{D0AEAB5A-4EF1-4764-9850-2E99576C83A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0AEAB5A-4EF1-4764-9850-2E99576C83A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0AEAB5A-4EF1-4764-9850-2E99576C83A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDE92FDD-88BF-43DE-A716-7225A31B6F99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDE92FDD-88BF-43DE-A716-7225A31B6F99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDE92FDD-88BF-43DE-A716-7225A31B6F99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDE92FDD-88BF-43DE-A716-7225A31B6F99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C192260-DF62-4FC5-BC1F-E550709DA204}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C192260-DF62-4FC5-BC1F-E550709DA204}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C192260-DF62-4FC5-BC1F-E550709DA204}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C192260-DF62-4FC5-BC1F-E550709DA204}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using BackendTechnicalTest.Models.Clients;
 using BackendTechnicalTest.Models.Transactions;
+using Microsoft.EntityFrameworkCore;
 
 namespace BackendTechnicalTest.Models.Accounts;
 
@@ -11,6 +12,7 @@ public class Account: Keyed
     public string AccountNumber { get; set; } = null!;
     
     [Required]
+    [Precision(19, 4)]
     public decimal Balance { get; set; }
 
     #region Foreign Keys
