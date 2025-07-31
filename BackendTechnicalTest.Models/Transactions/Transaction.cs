@@ -5,30 +5,35 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BackendTechnicalTest.Models.Transactions;
 
-public class Transaction : Keyed
+[Table("Transactions", Schema = "Transactions")]
+public class Transaction(
+    DateTime date,
+    decimal amount,
+    TransactionType type,
+    decimal balance,
+    string description,
+    Guid accountId) : Keyed
 {
-    [Required]
-    public DateTime Date { get; set; } = DateTime.UtcNow;
-    
-    [Required]
-    public decimal Amount { get; set; }
-    
-    [Required]
-    public TransactionType Type { get; set; }
-    
-    [Required]
-    [Precision(19, 4)]
-    public decimal Balance { get; set; }
+    public Transaction() : this(DateTime.UtcNow, decimal.Zero, TransactionType.Deposit, decimal.Zero, string.Empty,
+        Guid.Empty) { }
 
-    public string Description { get; set; } = null!;
+    [Required] public DateTime Date { get; set; } = date;
+
+    [Required] public decimal Amount { get; set; } = amount;
+
+    [Required] public TransactionType Type { get; set; } = type;
+
+    [Required] [Precision(19, 4)] public decimal Balance { get; set; } = balance;
+
+    public string Description { get; set; } = description;
 
     #region Foreign Keys
 
     [Required]
     [ForeignKey(nameof(AccountId))]
-    public Guid AccountId { get; set; }
+    public Guid AccountId { get; set; } = accountId;
 
-    public Account Account { get; set; } = null!;   
-    
+    public Account Account { get; set; } = null!;
+
     #endregion
 }

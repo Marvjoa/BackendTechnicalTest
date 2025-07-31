@@ -46,7 +46,6 @@ public class AccountService : IAccountService
         var interestAmount = account.Balance * (ratePercentage / 100);
         
         account.Balance += interestAmount;
-        
         var transaction = new Transaction
         {
             AccountId = account.Id,
