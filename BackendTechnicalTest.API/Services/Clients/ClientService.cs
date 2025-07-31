@@ -1,3 +1,4 @@
+using BackendTechnicalTest.API.Dto.Clients;
 using BackendTechnicalTest.API.Interfaces.Clients;
 using BackendTechnicalTest.Infrastructure.Context;
 using BackendTechnicalTest.Models.Clients;
@@ -13,13 +14,21 @@ public class ClientService : IClientService
         _context = context ?? throw new ArgumentNullException(nameof(context));
     }
     
-    public async Task<Client> CreateClientAsync(Client client)
+    public async Task<Client> CreateClientAsync(ClientDto dto)
     {
-        if (client == null) throw new ArgumentNullException(nameof(client));
+        if (dto == null) throw new ArgumentNullException(nameof(dto));
         
+        var client = new Client
+        {
+            Name = dto.Name,
+            Birthdate = dto.Birthdate,
+            Gender = dto.Gender,
+            Income = dto.Income
+        };
+
         _context.Clients.Add(client);
         await _context.SaveChangesAsync();
-        
+
         return client;
     }
 

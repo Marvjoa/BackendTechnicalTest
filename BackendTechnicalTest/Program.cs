@@ -1,4 +1,11 @@
+using BackendTechnicalTest.API.Interfaces.Accounts;
+using BackendTechnicalTest.API.Interfaces.Clients;
+using BackendTechnicalTest.API.Interfaces.Transactions;
+using BackendTechnicalTest.API.Services.Accounts;
+using BackendTechnicalTest.API.Services.Clients;
+using BackendTechnicalTest.API.Services.Transactions;
 using BackendTechnicalTest.Infrastructure.Context;
+using BackendTechnicalTest.Infrastructure.Mappings;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,8 +15,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
 builder.Services.AddDbContext<BankDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+builder.Services.AddScoped<IClientService, ClientService>();
+builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<ITransactionService, TransactionService>();
 
 var app = builder.Build();
 
